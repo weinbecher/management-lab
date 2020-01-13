@@ -22,5 +22,15 @@ public abstract class Employee {
         return this.salary;
     }
 
+    public void salaryRaise(int percentage){
+        double bump = percentage / 100.0;
+        this.salary = this.salary * (1 + bump);
+    };
+
+    public  double payBonus(){
+        return this.salary * 0.01;
+    };
+
+
 }
 
