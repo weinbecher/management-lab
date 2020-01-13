@@ -40,8 +40,26 @@ public class ManagerTest {
     }
 
     @Test
+    public void cannotRaiseSalaryWithNegativeValue(){
+        assertEquals("No negative percentage allowed, this is a salary BUMP!!!", manager.salaryRaise(-10));
+    }
+
+    @Test
     public void canGetPayBonus(){
         assertEquals(1200.0, manager.payBonus(),0.1);
     }
+
+    @Test
+    public void canChangeName(){
+        manager.setName("Claude");
+        assertEquals("Claude", manager.getName());
+    }
+
+    @Test
+    public void cantChangeNameIfStringIsEmpty(){
+        manager.setName("");
+        assertEquals("Bobby", manager.getName());
+    }
+
 
 }

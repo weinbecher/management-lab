@@ -8,4 +8,8 @@ public class Director extends Manager {
         super(name, niNumber, salary, department);
         this.budget = budget;
     }
+
+    public double payBonus(){
+        return this.getSalary() * 0.02;
+    }
 }

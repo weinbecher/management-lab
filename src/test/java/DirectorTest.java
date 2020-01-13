@@ -8,6 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class DirectorTest {
 
     private Director director;
+    private Director duckrector;
 
     @Before
     public void before(){
@@ -41,9 +42,18 @@ public class DirectorTest {
         assertEquals(0.0, director.getSalary(), 0.1);
     }
 
+
     @Test
     public void canGetPayBonus(){
         assertEquals(0.0, director.payBonus(),0.1);
+    }
+
+    @Test
+    public void canGetBonusOfTwoPercent(){
+        duckrector = new Director("Daffy", "QUACK", 1000.0, "Ping Pong", 50.00);
+        assertEquals(20.0, duckrector.payBonus(), 0.1);
+
+
     }
 
 }

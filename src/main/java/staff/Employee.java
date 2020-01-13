@@ -22,14 +22,26 @@ public abstract class Employee {
         return this.salary;
     }
 
-    public void salaryRaise(int percentage){
-        double bump = percentage / 100.0;
-        this.salary = this.salary * (1 + bump);
-    };
+    public String salaryRaise(int percentage){
+        if (percentage > 0) {
+            double bump = percentage / 100.0;
+            this.salary = this.salary * (1 + bump);
+            return "Congratulations, you got a salary bump. Nice Job!";
+        }
+        else {
+            return "No negative percentage allowed, this is a salary BUMP!!!";
+        }
+    }
 
     public  double payBonus(){
         return this.salary * 0.01;
     };
+
+    public void setName(String newName) {
+        if (newName.length() > 0) {
+            this.name = newName;
+        }
+    }
 
 
 }
